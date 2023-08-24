@@ -1,0 +1,27 @@
+.header {
+    position: sticky;
+    background-color: black;
+    display: flex;
+    height: 110px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.header img {
+    height: 80%;
+}
+
+.header h1 {
+    font-family: 'Wide Latin';
+    font-size: 2.5rem;
+    color: white;
+}
+
+.header h1 span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: 1px solid white;
+    padding: 0 10px;
+}
