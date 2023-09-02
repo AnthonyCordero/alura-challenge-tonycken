@@ -1,0 +1,31 @@
+.hero-section {
+    padding: 0 5%;
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    background-size: cover;
+
+}
+
+.hero-section img {
+    height: 55%;
+}
+
+@media screen and (max-width: 380px) {
+    .hero-section {
+        background-position: center;
+        flex-direction: column;
+        height: 400px;
+    }
+
+    .hero-section img {
+        display: none;
+    }
+
+    .hero-section iframe {
+        width: 100vw;
+    }
+}

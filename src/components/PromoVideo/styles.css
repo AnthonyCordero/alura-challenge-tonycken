@@ -1,0 +1,23 @@
+.promo-video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.promo-video h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: -3px 3px 5px #000000
+}
+
+
+
+@media screen and (max-width: 380px) {
+    .promo-video {
+        margin-top: 3rem;
+    }
+
+}
