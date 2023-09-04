@@ -1,0 +1,11 @@
+.genderSection {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.genderSection h2 {
+    font-family: 'Wide Latin', sans-serif;
+    color: #ffffff;
+    font-size: 1.5rem;
+}
