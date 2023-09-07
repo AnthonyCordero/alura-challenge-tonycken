@@ -1,0 +1,18 @@
+.formButton {
+    margin: 2rem;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 380px) {
+    .formButton {
+        padding: 5px 5px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        width: 30%;
+    }
+}

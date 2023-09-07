@@ -25,6 +25,7 @@ const Carrousell = (props) => {
     };
 
     const { concerts } = props;
+
     return (
         <Carousel responsive={responsive} >
             {
