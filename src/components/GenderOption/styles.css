@@ -1,0 +1,44 @@
+.gender-option label {
+    color: white;
+}
+
+
+.gender-option {
+    width: 100%;
+}
+
+
+.gender-option label {
+    display: block;
+    color: white;
+}
+
+.gender-option label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+}
+
+.gender-option select {
+    border: solid 1px white;
+    color: white;
+    width: 100%;
+    padding: 1.3rem;
+    background: none;
+}
+
+.gender-option select::placeholder {
+    color: white;
+}
+
+.gender-option select:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.genderOptionColapsable {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.genderOptionColapsable:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}

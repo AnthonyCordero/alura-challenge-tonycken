@@ -1,0 +1,15 @@
+.addNewConcertForm {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 10rem 0;
+}
+
+.addNewConcertForm h2 {
+    color: white;
+    font-family: 'Wide Latin', sans-serif;
+}

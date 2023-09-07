@@ -5,8 +5,12 @@ import './App.css';
 import GenderSection from './components/GenderSection';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import FormsSection from './components/FormsSection';
+import SHFormSection from './components/SHFormSection';
 
 function App() {
+
+  const [showHideForm, setShowHideForm] = useState(true);
 
   const [concerts, updateConcerts] = useState([
     {
@@ -111,7 +115,7 @@ function App() {
     },
   ]);
 
-  const [gender, updateGender] = useState([
+  const [gender, updateGenders] = useState([
     {
       id: uuid(),
       title: 'Classic Rock',
@@ -132,17 +136,59 @@ function App() {
     },
   ]);
 
+  const concertsRegistration = (concert) => {
+    updateConcerts([...concerts, concert]);
+  }
+
+  const updateColor = (color, id) => {
+    const updatedGenderColor = gender.map((gender) => {
+      if (gender.id === id) {
+        gender.primaryColor = color;
+      }
+      return gender;
+    });
+
+    updateGenders(updatedGenderColor);
+  };
+
+  const createGender = (newGender) => {
+    updateGenders([...gender, { ...newGender, id: uuid() }])
+  }
+
+  const switchShowHide = () => {
+    console.log('Oh Yeah');
+    setShowHideForm(!showHideForm);
+  }
+
   return (
-    <div className="App">
+    <div>
       <Header />
       <Hero />
-      {gender.map((defGender) => (
-        <GenderSection
+      {
+        gender.map((defGender) => <GenderSection
           genderData={defGender}
           key={defGender.title}
-          concerts={concerts.filter((concert) => concert.gender === defGender.title)}
+          concerts={concerts.filter(concert => concert.gender === defGender.title)}
+          updateColor={updateColor}
+          gender={gender}
+
         />
-      ))}
+        )
+      }
+
+      <SHFormSection
+        switchShowHide={switchShowHide}
+      />
+
+      {
+        showHideForm && <FormsSection
+          gender={gender.map((gender) => gender.title)}
+          concertsRegistration={concertsRegistration}
+          createGender={createGender}
+        />
+      }
+
+
     </div>
   );
 }
