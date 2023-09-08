@@ -11,10 +11,7 @@ const AddVideoForm = (props) => {
     const [gender, setGender] = useState('')
     const [year, setYear] = useState('')
 
-    const [title, updateTitle] = useState('')
-    // const [color, updateColor] = useState('')
-
-    const { concertRegistration, like } = props
+    const { concertRegistration, genderInfo } = props
 
     const sendData = (e) => {
         e.preventDefault()
@@ -27,11 +24,6 @@ const AddVideoForm = (props) => {
         };
         concertRegistration(sendData);
     };
-
-    // const sendNewGenderData = (e) => {
-    //     e.preventDefault();
-    //     createGender({ title, primaryColor: color });
-    // }
 
     return <article
         style={{ backgroundImage: 'url(/img/create-concert-formbg.png)' }} className='addNewConcertForm'>
@@ -65,9 +57,9 @@ const AddVideoForm = (props) => {
                 value={videoLink}
                 setValue={setVideoLink} />
             <GenderOption
-                value={props.gender}
+                value={genderInfo}
                 setGender={setGender}
-                gendersInfo={props.gender} />
+                genderInfo={genderInfo} />
             <FormButton>
                 Add The New Band Concert!
             </FormButton>

@@ -2,15 +2,11 @@
     width: 100%;
 }
 
-
-.form-input label {
-    display: block;
-    color: white;
-}
-
 .form-input label {
     font-family: 'Oswald', sans-serif;
     font-size: 1.3rem;
+    display: block;
+    color: white;
 }
 
 .form-input input {

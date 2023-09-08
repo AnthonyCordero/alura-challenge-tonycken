@@ -10,7 +10,7 @@ const GenderOption = (props) => {
         <label>Gender</label>
         <select value={props.title} onChange={selectChange}>
             <option value='' disbled defaultValue='' hidden>Seleccionar Equipo</option>
-            {props.gendersInfo.map((title, index) => <option className='genderOptionColapsable' key={index} value={title}>{title}
+            {props.genderInfo.map((title, index) => <option className='genderOptionColapsable' key={index} value={title}>{title}
             </option>
             )}
         </select>
