@@ -14,7 +14,7 @@ const FormInput = (props) => {
         <label for={title}>{title}</label>
         <input
             placeholder={placeholderMod}
-            required={props.required}
+            required
             value={props.value}
             onChange={inputValueChange}
             type={type}

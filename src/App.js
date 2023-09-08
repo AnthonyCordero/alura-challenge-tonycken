@@ -115,44 +115,41 @@ function App() {
     },
   ]);
 
-  const [gender, updateGenders] = useState([
+  const [genderInfo, updateGendersInfo] = useState([
     {
       id: uuid(),
       title: 'Classic Rock',
       primaryColor: '000000',
-      secondaryColor: 'ffffff'
     },
     {
       id: uuid(),
       title: 'Death Metal',
       primaryColor: '000000',
-      secondaryColor: 'ffffff'
     },
     {
       id: uuid(),
       title: 'Thrash Metal',
       primaryColor: '000000',
-      secondaryColor: 'ffffff'
     },
   ]);
 
-  const concertsRegistration = (concert) => {
+  const concertRegistration = (concert) => {
     updateConcerts([...concerts, concert]);
   }
 
   const updateColor = (color, id) => {
-    const updatedGenderColor = gender.map((gender) => {
-      if (gender.id === id) {
-        gender.primaryColor = color;
+    const updatedGenderColor = genderInfo.map((gender) => {
+      if (genderInfo.id === id) {
+        genderInfo.primaryColor = color;
       }
       return gender;
     });
 
-    updateGenders(updatedGenderColor);
+    updateGendersInfo(updatedGenderColor);
   };
 
   const createGender = (newGender) => {
-    updateGenders([...gender, { ...newGender, id: uuid() }])
+    updateGendersInfo([...genderInfo, { ...newGender, id: uuid() }])
   }
 
   const switchShowHide = () => {
@@ -165,12 +162,12 @@ function App() {
       <Header />
       <Hero />
       {
-        gender.map((defGender) => <GenderSection
+        genderInfo.map((defGender) => <GenderSection
           genderData={defGender}
           key={defGender.title}
           concerts={concerts.filter(concert => concert.gender === defGender.title)}
           updateColor={updateColor}
-          gender={gender}
+          gender={genderInfo}
 
         />
         )
@@ -182,8 +179,8 @@ function App() {
 
       {
         showHideForm && <FormsSection
-          gender={gender.map((gender) => gender.title)}
-          concertsRegistration={concertsRegistration}
+          genderInfo={genderInfo.map((gen) => gen.title)}
+          concertRegistration={concertRegistration}
           createGender={createGender}
         />
       }

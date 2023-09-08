@@ -4,9 +4,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    padding: 10rem 0;
+    margin: 2rem 0;
 }
 
 .addNewConcertForm h2 {

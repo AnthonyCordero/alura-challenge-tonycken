@@ -1,18 +1,21 @@
 import './styles.css'
 import AddVideoForm from '../AddVideoForm'
+import AddGenderSectionForm from '../AddGenderSectionForm';
 
 const FormsSection = (props) => {
-    const { coworkerRegistration, createGender, like, gender } = props;
+
+    const { concertRegistration, createGender, genderInfo } = props;
 
     return <section className='formSection'>
         <AddVideoForm
-            coworkerRegistration={coworkerRegistration}
-            createGender={createGender}
-            gender={gender}
-        />
-        {/* <AddGenderSectionForm
+            concertRegistration={concertRegistration}
 
-        /> */}
+            genderInfo={genderInfo}
+        />
+        <AddGenderSectionForm
+            createGender={createGender}
+            genderInfo={genderInfo}
+        />
     </section>
 
 }
