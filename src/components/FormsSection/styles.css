@@ -3,6 +3,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: black;
     flex-wrap: wrap;
+}
+
+.formSection button {
+    padding: 1.5rem 2.5rem;
+    color: #ffffff;
+    border: solid 2px #ffffff;
 }

@@ -6,11 +6,10 @@ import GenderSection from './components/GenderSection';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import FormsSection from './components/FormsSection';
-import SHFormSection from './components/SHFormSection';
 
 function App() {
 
-  const [showHideForm, setShowHideForm] = useState(true);
+  const [showVideoForm, setShowVideoForm] = useState(true);
 
   const [concerts, updateConcerts] = useState([
     {
@@ -133,6 +132,10 @@ function App() {
     },
   ]);
 
+  const toggleForm = () => {
+    setShowVideoForm(!showVideoForm);
+  };
+
   const concertRegistration = (concert) => {
     updateConcerts([...concerts, concert]);
   }
@@ -152,10 +155,6 @@ function App() {
     updateGendersInfo([...genderInfo, { ...newGender, id: uuid() }])
   }
 
-  const switchShowHide = () => {
-    console.log('Oh Yeah');
-    setShowHideForm(!showHideForm);
-  }
 
   return (
     <div>
@@ -173,17 +172,13 @@ function App() {
         )
       }
 
-      <SHFormSection
-        switchShowHide={switchShowHide}
+      <FormsSection
+        genderInfo={genderInfo.map((gen) => gen.title)}
+        concertRegistration={concertRegistration}
+        createGender={createGender}
+        toggleForm={toggleForm}
+        showVideoForm={showVideoForm}
       />
-
-      {
-        showHideForm && <FormsSection
-          genderInfo={genderInfo.map((gen) => gen.title)}
-          concertRegistration={concertRegistration}
-          createGender={createGender}
-        />
-      }
 
 
     </div>
