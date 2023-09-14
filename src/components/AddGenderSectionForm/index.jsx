@@ -4,7 +4,7 @@ import FormInput from '../FormInput'
 import FormButton from '../FormButton'
 
 const AddGenderSectionForm = (props) => {
-    const { createGender, genderInfo } = props
+    const { createGender, } = props
     const [title, updateTitle] = useState('')
     const [color, updateColor] = useState('')
 
